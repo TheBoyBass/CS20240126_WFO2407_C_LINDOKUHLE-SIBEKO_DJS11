@@ -19,12 +19,22 @@ const ShowList = ({ onSelectShow }) => {
         loadData();
         }, []);
 
+        // Function to format the date
+        const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString(); // Formats to 'MM/DD/YYYY' or similar based on locale
+    };
+
         return (
             <div>
                 <h2>Podacst Shows</h2>
                 {shows.map(show =>(
                     <div key={show.id} onClick={() => onSelectShow(show)}>
                         <h3>{show.title}</h3>
+                        {show.image && <img src={show.image} alt={show.title} style={{ width: '250px', height: 'auto' }} />}
+                        <p>Number of Seasons: {show.seasons}</p>
+                        <p>Genre: {show.genres}</p>
+                        <p>Last Updated: {formatDate(show.updated)}</p>
                     </div>
                 ))}
             </div>
