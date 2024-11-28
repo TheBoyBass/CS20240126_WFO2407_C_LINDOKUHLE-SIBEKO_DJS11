@@ -1,9 +1,9 @@
 #root {
-  max-width:100%;
+  max-width:200%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: #242424;
+  background-color: #090C08;
 }
 
 .logo {
@@ -13,7 +13,7 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #0EB1D2);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
@@ -39,5 +39,5 @@
 }
 
 .read-the-docs {
-  color: #888;
+  rgb(4, 4, 4);
 }
