@@ -8,7 +8,10 @@ const ShowList = ({ onSelectShow }) => {
         const loadData =async () => {
             try {
                 const data = await fetchPreviews();
-                setShows(data);
+                const sortedShows = data.sort((a, b) => {
+                    return a.title.localeCompare(b.title); //Sorts by tite A-Z order
+                    });
+                setShows(sortedShows);
             } catch (error) {
                 console.error('Error Fetching shows: ' + error);
             }
