@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPreviews } from '../services/api';
+import '../styles/ShowList.css'; // Import the new CSS file
 
 const ShowList = ({ onSelectShow }) => {
     const [shows, setShows] = useState([]);
@@ -27,17 +28,19 @@ const ShowList = ({ onSelectShow }) => {
 
         return (
             <div>
-                <h2>Podacst Shows</h2>
-                {shows.map(show =>(
-                    <div key={show.id} onClick={() => onSelectShow(show)}>
+            <h2>Continue Listening for TheBoyBass</h2>
+            <div className="show-list"> {/* Flex container */}
+                {shows.map(show => (
+                    <div key={show.id} className="show-item" onClick={() => onSelectShow(show)}>
                         <h3>{show.title}</h3>
-                        {show.image && <img src={show.image} alt={show.title} style={{ width: '250px', height: 'auto' }} />}
+                        {show.image && <img src={show.image} alt={show.title} />}
                         <p>Number of Seasons: {show.seasons}</p>
                         <p>Genre: {show.genres}</p>
                         <p>Last Updated: {formatDate(show.updated)}</p>
                     </div>
                 ))}
             </div>
+        </div>
         );
 };
 
