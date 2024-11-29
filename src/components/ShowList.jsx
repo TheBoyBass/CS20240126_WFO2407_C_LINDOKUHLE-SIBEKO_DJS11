@@ -32,6 +32,9 @@ const ShowList = ({ onSelectShow }) => {
         loadData();
         }, []);
 
+        // logic to handle the genre selection
+        const filteredShows = shows.genres ? shows.filter(show => show.genres.includes(shows.genre)) : shows; 
+
         // Function to format the date
         const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -42,7 +45,7 @@ const ShowList = ({ onSelectShow }) => {
             <div>
             <h2>Continue Listening for TheBoyBass</h2>
             <div className="show-list"> {/* Flex container */}
-                {shows.map(show => (
+                {filteredShows.map(show => (
                     <div key={show.id} className="show-item" onClick={() => onSelectShow(show)}>
                         <h3>{show.title}</h3>
                         {show.image && <img src={show.image} alt={show.title} />}

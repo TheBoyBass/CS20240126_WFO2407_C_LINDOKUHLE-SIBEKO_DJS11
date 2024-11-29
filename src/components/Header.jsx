@@ -17,7 +17,7 @@ const Header = () => {
                 <nav>
                     <ul>
                         <li><Link to="/">🏠<span>All Shows</span></Link></li>
-                        <li><Link to="">🎧<span>Genre</span></Link></li>
+                        <li><Link to="/genres">🎧<span>Genre</span></Link></li>
                         <li><Link to="">🎧<span>Your Favourites</span></Link></li>
                         <li><Link to="">🔍<span>Search</span></Link></li>
                     </ul>
