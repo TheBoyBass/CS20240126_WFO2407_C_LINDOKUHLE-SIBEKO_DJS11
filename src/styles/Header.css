@@ -29,7 +29,8 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; 
+    display: flex;
+    margin-right: 15rem; 
 }
 
 .header nav ul li {
@@ -45,4 +46,68 @@
 .header nav ul li a:hover {
     text-decoration: underline;
     color:#F05365;
+}
+
+/* Profile Area Styles */
+.profile-area {
+    position: relative; /* Position for dropdown */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    
+}
+
+.profile-pic {
+    width: fit-content; /* Set width for profile picture */
+    height: 10rem; /* Set height for profile picture */
+    border-radius: 50%; /* Rounded profile picture */
+    margin-bottom: 5px; /* Space between image and text */
+    will-change: filter; /* Prepare for filter changes */
+    transition: filter 300ms; /* Smooth transition for filter */
+}
+
+.profile-area img {
+    object-fit: cover; /* Keep aspect ratio while scaling */
+    width: 60px;
+    height: 60px; 
+    border-radius: 10%; /* Rounded profile picture */
+}
+
+
+
+.profile-area:hover .profile-pic {
+    filter: drop-shadow(0 0 2em #0EB1D2); /* Glow effect on hover */
+}
+
+.profile-text {
+    color: #D8D4F2; /* Text color */
+    font-size: 12px; /* Font size for the text */
+    text-align: center; /* Center align the text */
+}
+
+.dropdown-menu {
+    position:static; /* Position it relative to the profile area */
+    background-color:#333; /* Background color for dropdown */
+    z-index:2000;
+
+}
+
+.dropdown-menu ul {
+    list-style: none; /* Remove list style */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.dropdown-menu ul li {
+    padding: 10px; /* Padding for each item */
+}
+
+.dropdown-menu ul li a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-menu ul :hover {
+    background-color: #0EB1D2; /* Change background on hover */
 }
