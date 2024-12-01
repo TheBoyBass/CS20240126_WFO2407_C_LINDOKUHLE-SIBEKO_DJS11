@@ -25,3 +25,9 @@
     height: auto;
     border-radius: 8px 8px 0 0; /* Rounded corners */
 }
+
+.Main-Heading {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 100px;
+}

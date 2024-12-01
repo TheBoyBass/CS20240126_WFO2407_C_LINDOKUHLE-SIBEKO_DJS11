@@ -44,7 +44,6 @@
 }
 
 .header nav ul li a:hover {
-    text-decoration: underline;
     color:#F05365;
 }
 
@@ -110,4 +109,28 @@
 
 .dropdown-menu ul :hover {
     background-color: #0EB1D2; /* Change background on hover */
+}
+
+.Genre-area {
+    position: relative; /* Ensure the dropdown is positioned relative to this */
+    cursor: pointer;
+    color: #fff;
+}
+
+.dropdown-Genre-menu {
+    position: absolute; /* Change to absolute */
+    top: 100%; /* Position it below the Genre-area */
+    z-index: 2000; /* Ensure it stays above other content */
+}
+
+.dropdown-Genre-menu ul {
+    list-style: none;
+    margin-right: 15rem;
+
+}
+
+.dropdown-Genre-menu ul li {
+    font-size: 12px;
+    right: 0;
+    color: #fff;
 }

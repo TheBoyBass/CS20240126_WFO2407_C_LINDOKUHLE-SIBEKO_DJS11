@@ -11,7 +11,7 @@ const genreMapping = {
     6: 'Business',
     7: 'Fiction',
     8: 'News',
-    9: 'Kids and Family',
+    9: 'Kids and Family', 
 };
 
 const ShowList = ({ onSelectShow }) => {
@@ -43,7 +43,7 @@ const ShowList = ({ onSelectShow }) => {
 
         return (
             <div>
-            <h2>Continue Listening for TheBoyBass</h2>
+            <h2 className='Main-Heading'>Continue Listening for TheBoyBass</h2>
             <div className="show-list"> {/* Flex container */}
                 {filteredShows.map(show => (
                     <div key={show.id} className="show-item" onClick={() => onSelectShow(show)}>
