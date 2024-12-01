@@ -1,119 +1,61 @@
-# 🎵 PODCAST APP | PORTFOLIO PIECE 💿
-[DJS11] Starter Instructions for the Final Portfolio Piece Submission 🚀
+# 🎵 PODCAST APP | PORTFOLIO PIECE(Brain Cast🧠) 💿
+[Brain Cast Netlify Link](https://braincast.netlify.app/) 🚀
 
 
 <!-- omit in toc -->
 **Table of Contents**
 
-- [🤖 Technology](#-technology)
-- [📦Data](#data)
-	- [Relationships](#relationships)
-	- [Endpoints](#endpoints)
-	- [Genre Titles](#genre-titles)
-- [🧑 User Stories](#user-stories)
+- [🔍Project-Brief](#Project-Brief)
+- [⚙️ Setup-Instructionss](#Setup-Instructions)
+- [🤖 Tech-Stack](#Tech-Stack)
+- [📦Usage Examples](#Usage-Examples)
+	- [🧑 User Stories](#user-stories)
+- [🛰️Contact Information](#Contact-information)
 
-## 🤖 Technology
 
-**You will be required to complete this project using React and a build-process to manage all the complexity involved.** 
+### 🔍Project-Brief
+The Braincast App was inspired by the Netflix Layout.
+The goal of this project was to develop a podcast application using React. The app should fetch data from a provided API and display information about various podcasts, including shows, seasons, and episodes.The  users should be able to browse, listen to episodes, and manage their favorite episodes.
 
-You are welcome to use any other technology that you are comfortable with as well as React. It is recommended that you use TypeScript as well, however you are welcome to avoid TypeScript entirely if you do not feel comfortable with it’s usage just yet.
+### ⚙️ Setup Instructions
+1. Clone the repository:
 
-## 📦Data
+git clone[https://github.com/TheBoyBass/CS20240126_WFO2407_C_LINDOKUHLE-SIBEKO_DJS11.git]
 
-**Data consists of three basic semantic units**
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/TheBoyBass/CS20240126_WFO2407_C_LINDOKUHLE-SIBEKO_DJS11.git
+   ```
+2. Change Directory
+   ```bash
+   cd CS20240126_WFO2407_C_LINDOKUHLE-SIBEKO_DJS11
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- `SHOW`: A specific podcast that contains a single or several `SEASON`
-- `SEASON`: A collection of `EPISODE` released across a specific timespan
-- `EPISODE`: Corresponds to a specific MP3 file that user can listen
+4. Run Development localy:
+   ```bash
+   npm run dev
+   ```
+5. Follow Local Link (ctrl + click)
+   ```
+   Local: http://localhost:####/
+   ```
+   
+### 🤖 Tech-Stack
 
-However, the following information is also exposed via the API
+**I was required to complete this project using React and a build-process to manage all the complexity involved. I decided against using type script as i am not as comfortable with it yet.** 
+- `React`: Core framework for building the app
+- `HTML/CSS`: For structuring and styling the app.
+- `JavaScript`: For adding interactivity and handling logic.
+- `React Router`: For managing navigation within the app.
+  
+### 📦Usage Examples
+**The Projects KPA's are based on the following User Stories:**
 
-- `PREVIEW`: A summarised version of a `SHOW` that only contains basic information. Usually exposed when an array of different `SHOW` information is requested.
-- `GENRE`: Information related to a (one of many) genres that can be assigned to a `SHOW`
-
-### Relationships
-
-The following chart indicates the relations between units of data. It uses Entity Relationship mapping. In order to understand the meaning of symbols in the chart please read [the overview on the Mermaid.js documentation](https://mermaid.js.org/syntax/entityRelationshipDiagram.html). 
-
-Note that the text between the units indicates what properties map to one another. It is separated by means of three underscores (`___`). The value before the underscores is the mapping from the parent object, whereas the values after the underscore is the mapping from the child object.
-
-_Note that is some cases there is no way to infer the parent from the child itself , in those cases just the parent map is noted, with no value after the underscores_.
-
-```mermaid
-erDiagram
-
-PREVIEW {
-    number id
-    string title
-    string description
-		number seasons
-		string image
-		array genreIds
-		updated string
-}
-
-SHOW {
-    number id
-    string title
-    string description
-		array seasons
-}
-
-SEASON {
-  number id
-	string title
-	string image
-	array episodes
-}
-
-EPISODE {
-	number id
-	string file
-	string title
-}
-
-GENRE {
-	number id
-	string title
-	string description
-	array showIds
-}
-
-PREVIEW ||--|| SHOW: id___id
-PREVIEW }|--|{ GENRE: genreIds___showIds
-SHOW }|--|{ GENRE: genreIds___showIds
-SHOW ||--|{ SEASON: seasons___
-SEASON ||--|{ EPISODE: episodes___
-
-```
-
-### Endpoints
-
-Data can be called via a `fetch` request to the following three endpoints. Note that there is not always a one-to-one mapping between endpoints and actual data structures. Also note that  ***`<ID>`** indicates where the dynamic ID for the requested item should be placed. For example: `[https://podcast-api.netlify.app/genre/3](https://podcast-api.netlify.app/genre/3)`* 
-
-| URL |  |
-| --- | --- |
-| `https://podcast-api.netlify.app` | Returns an array of PREVIEW |
-| `https://podcast-api.netlify.app/genre/<ID>` | Returns a GENRE object |
-| `https://podcast-api.netlify.app/id/<ID>` | Returns a SHOW object with several SEASON and EPISODE objects directly embedded within |
-
-### Genre Titles
-
-Since genre information is only exposed on `PREVIEW` by means of the specific `GENRE` id, it is recommended that you include the mapping between genre id values and title in your code itself:
-
-| ID | Title |
-| --- | --- |
-| 1 | Personal Growth |
-| 2 | Investigative Journalism |
-| 3 | History |
-| 4 | Comedy |
-| 5 | Entertainment |
-| 6 | Business |
-| 7 | Fiction |
-| 8 | News |
-| 9 | Kids and Family |
-
-## 🧑 User Stories
+### 🧑 User Stories
 
 Please refer to the DJS rubric found in your dashboard spreadsheet for more detail. 
 
@@ -180,3 +122,5 @@ Please refer to the DJS rubric found in your dashboard spreadsheet for more deta
 | P3.52|                            | App displays the exact timestamp location of where they left off any episode                                                  | Hard       | 3     |
 
 
+###🛰️Contact Information:
+-Email: elensibeko@gmaill.com
