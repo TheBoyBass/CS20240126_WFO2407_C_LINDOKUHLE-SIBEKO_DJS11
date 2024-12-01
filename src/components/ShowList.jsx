@@ -1,7 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPreviews } from '../services/api';
+import Thumbnails from './Thumbnails';
 import '../styles/ShowList.css'; // Import the new CSS file
 
+const genreMapping = {
+    1: "Personal Growth",
+    2: 'Investigative Journalism',
+    3: 'History',
+    4: 'Comedy',
+    5: 'Entertainment',
+    6: 'Business',
+    7: 'Fiction',
+    8: 'News',
+    9: 'Kids and Family', 
+};
 
 const ShowList = ({ onSelectShow }) => {
     const [shows, setShows] = useState([]);
@@ -28,20 +40,24 @@ const ShowList = ({ onSelectShow }) => {
     };
 
         return (
+            
             <div>
-            <h2 className='Main-Heading'>Continue Listening for TheBoyBass</h2>
-            <div className="show-list"> {/* Flex container */}
-                {filteredShows.map(show => (
-                    <div key={show.id} className="show-item" onClick={() => onSelectShow(show)}>
-                        <h3>{show.title}</h3>
-                        {show.image && <img src={show.image} alt={show.title} />}
-                        <p>Number of Seasons: {show.seasons}</p>
-                        <p>Genre: {show.genres.map(id => genreMapping[id]).join(',')}</p>
-                        <p>Last Updated: {formatDate(show.updated)}</p>
-                    </div>
-                ))}
-            </div>
-        </div>
+                <div className='Thumbnai List'>
+                    <Thumbnails />
+                </div>
+                <h2 className='Main-Heading'>Continue Listening for TheBoyBass</h2>
+                <div className="show-list"> {/* Flex container */}
+                    {shows.map(show => (
+                        <div key={show.id} className="show-item" onClick={() => onSelectShow(show)}>
+                            <h3>{show.title}</h3>
+                            {show.image && <img src={show.image} alt={show.title} />}
+                            <p>Number of Seasons: {show.seasons}</p>
+                            <p>Genre: {show.genres.map(id => genreMapping[id]).join(',')}</p>
+                            <p>Last Updated: {formatDate(show.updated)}</p>
+                        </div>
+                    ))}
+                </div>
+             </div>
         );
 };
 
