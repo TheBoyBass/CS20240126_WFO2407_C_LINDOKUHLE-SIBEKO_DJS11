@@ -6,6 +6,7 @@ const Header = () => {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [isGenreDropDownOpen, setGenreDropDownOpen] = useState(false);
 
+
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };

@@ -2,17 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { fetchPreviews } from '../services/api';
 import '../styles/ShowList.css'; // Import the new CSS file
 
-const genreMapping = {
-    1: "Personal Growth",
-    2: 'Investigative Journalism',
-    3: 'History',
-    4: 'Comedy',
-    5: 'Entertainment',
-    6: 'Business',
-    7: 'Fiction',
-    8: 'News',
-    9: 'Kids and Family', 
-};
 
 const ShowList = ({ onSelectShow }) => {
     const [shows, setShows] = useState([]);
@@ -31,9 +20,6 @@ const ShowList = ({ onSelectShow }) => {
         };
         loadData();
         }, []);
-
-        // logic to handle the genre selection
-        const filteredShows = shows.genres ? shows.filter(show => show.genres.includes(shows.genre)) : shows; 
 
         // Function to format the date
         const formatDate = (dateString) => {
